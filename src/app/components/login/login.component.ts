@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  public form = {
+    user: null,
+
+    password: null
+  }
+
+  constructor( private http:HttpClient ) { }
+
+  onSubmit() {
+    this.http.post('http://localhost:8000/api/login', this.form).subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    );
+  }
 
   ngOnInit(): void {
   }
