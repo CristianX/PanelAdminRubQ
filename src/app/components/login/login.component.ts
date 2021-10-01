@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -19,10 +19,16 @@ export class LoginComponent implements OnInit {
   constructor( private http:HttpClient ) { }
 
   onSubmit() {
-    this.http.post('http://localhost:8000/api/login', this.form).subscribe(
-      data => console.log(data),
-      error => this.handleError(error)
-    );
+    try {
+      this.http.post('http://localhost:8000/api/login', this.form, { headers: {
+        'Content-Type':  "application/json",
+      }}).subscribe(
+        data => console.log(data),
+        error => this.handleError(error),
+      ); 
+    } catch (error) {
+      
+    }
   }
 
   handleError(error: { error: { error: null; }; }) {
