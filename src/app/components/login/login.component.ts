@@ -1,5 +1,9 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './../../shared/auth.service';
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { TokenService } from '../../shared/token.service';
+import { AuthStateService } from '../../shared/auth-state.service';
 
 @Component({
   selector: 'app-login',
@@ -8,36 +12,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  public form = {
-    user: null,
+  loginForm: FormGroup;
+  errors = null;
 
-    password: null
-  }
+  constructor( 
+    public router : Router,
+    public fb: FormBuilder,
+    public authService: AuthService,
+    private token: TokenService,
+    private authState: AuthStateService,
+   ) {
+     this.loginForm = this.fb.group({
+       name: [],
+       password: []
+     });
+   }
 
-  public error = null;
-
-  constructor( private http:HttpClient ) { }
+   ngOnInit() {}
 
   onSubmit() {
-    try {
-      this.http.post('http://localhost:8000/api/login', this.form, { headers: {
-        'Content-Type':  "application/json",
-      }}).subscribe(
-        data => console.log(data),
-        error => this.handleError(error),
-      ); 
-    } catch (error) {
-      
-    }
+    this.authService.signin(this.loginForm.value).subscribe(
+      result => {
+        this.responseHandler(result);
+      },
+      error => {
+        this.errors = error.error.error;
+      }, () => {
+        this.authState.setAuthState(true);
+        this.loginForm.reset()
+        // console.log('autenticado');
+        this.router.navigate(['dashboard']);
+      }
+    );
   }
 
-  handleError(error: { error: { error: null; }; }) {
+  // Manejo de respuesta
+  responseHandler(data: { access_token: string; }) {
 
-    this.error =  error.error.error;
+    this.token.handleData(data.access_token);
 
-  }
-
-  ngOnInit(): void {
   }
 
 }
