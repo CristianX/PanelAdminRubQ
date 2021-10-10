@@ -42,4 +42,8 @@ export class AuthService {
     return this.http.get('http://localhost:8000/api/bicicletas');
   }
 
+  getBicicleta(id: number) : Observable<any> {
+    return this.http.get('http://localhost:8000/api/bicicleta/' + id);
+  }
+
 }

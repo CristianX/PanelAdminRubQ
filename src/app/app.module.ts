@@ -24,6 +24,7 @@ import { AuthInterceptor } from './shared/auth.interceptor';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BicicletasListComponent } from './components/bicicletas-list/bicicletas-list.component';
+import { BicicletaComponent } from './components/bicicleta/bicicleta.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { BicicletasListComponent } from './components/bicicletas-list/bicicletas
     UsersListComponent,
     NavbarComponent,
     BicicletasListComponent,
+    BicicletaComponent,
   ],
   imports: [
     BrowserModule,

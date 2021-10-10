@@ -41,7 +41,7 @@
                 <td>{{ bicicleta.CODREGISTRO_BICICLETA }}</td>
                 <td>{{ bicicleta.ESTADO_BICICLETA }}</td>
                 <td>
-                    <button class="btn btn-success">Ver</button>
+                    <button class="btn btn-success" [routerLink]="['/bicicleta', bicicleta.id]">Ver</button>
                 </td>
             </tr>
         </tbody>

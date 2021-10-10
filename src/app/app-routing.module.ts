@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
 import { BicicletasListComponent } from './components/bicicletas-list/bicicletas-list.component';
+import { BicicletaComponent } from './components/bicicleta/bicicleta.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,11 @@ const routes: Routes = [
   {
     path: 'bicicletas',
     component: BicicletasListComponent
+  },
+
+  {
+    path: 'bicicleta/:id',
+    component: BicicletaComponent
   }
 ];
 
