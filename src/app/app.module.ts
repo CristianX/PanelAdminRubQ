@@ -21,13 +21,19 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './shared/auth.interceptor';
+import { UsersListComponent } from './components/users/users-list/users-list.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { BicicletasListComponent } from './components/bicicletas-list/bicicletas-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    UsersListComponent,
+    NavbarComponent,
+    BicicletasListComponent,
   ],
   imports: [
     BrowserModule,

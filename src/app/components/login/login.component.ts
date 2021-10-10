@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         this.responseHandler(result);
       },
       error => {
-        this.errors = error.error.error;
+        this.errors = error;
       }, () => {
         this.authState.setAuthState(true);
         this.loginForm.reset()

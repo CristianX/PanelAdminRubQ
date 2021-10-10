@@ -1,0 +1,49 @@
+<header>
+    <app-navbar></app-navbar>
+
+</header>
+
+
+<div class="container- fluid" style="padding-top: 20px">
+
+    <!-- <div class="div" [hidden]="!errors">
+        <div class="alert alert-danger" role="alert">
+            <h2>No Autorizado</h2>
+        </div>
+    </div> -->
+
+    <!-- <table class="table" [hidden]="!errors"> -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Número de Serie</th>
+                <th>Categoría</th>
+                <th>Tipo</th>
+                <th>Tamaño</th>
+                <th>Combinación de Colores</th>
+                <th>Apoderado</th>
+                <th>Código de Registro</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-active" *ngFor="let bicicleta of DataBicicletas">
+                <td>{{ bicicleta.MARCA_BICICLETA }}</td>
+                <td>{{ bicicleta.MODELO_BICICLETA }}</td>
+                <td>{{ bicicleta.NUMEROSERIE_BICICLETA }}</td>
+                <td>{{ bicicleta.CATEGORIA_BICICLETA }}</td>
+                <td>{{ bicicleta.TIPOBICICLETA_BICICLETA }}</td>
+                <td>{{ bicicleta.TAMANIO_BICICLETA }}</td>
+                <td>{{ bicicleta.COMBCOLORES_BICICLETA }}</td>
+                <td>{{ bicicleta.APODERADO_BICICLETA }}</td>
+                <td>{{ bicicleta.CODREGISTRO_BICICLETA }}</td>
+                <td>{{ bicicleta.ESTADO_BICICLETA }}</td>
+                <td>
+                    <button class="btn btn-success">Ver</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

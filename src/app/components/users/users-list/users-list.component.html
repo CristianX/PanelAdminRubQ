@@ -1,0 +1,48 @@
+<header>
+    <app-navbar></app-navbar>
+
+</header>
+
+
+<div class="container- fluid" style="padding-top: 20px">
+
+    <!-- <div class="div" [hidden]="!errors">
+        <div class="alert alert-danger" role="alert">
+            <h2>No Autorizado</h2>
+        </div>
+    </div> -->
+
+    <!-- <table class="table" [hidden]="!errors"> -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Identificación</th>
+                <th>Edad</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Correo Electrónico</th>
+                <th>Nacionalidad</th>
+                <th>Parroquia</th>
+                <th>Barrio</th>
+                <th>Teléfono Celular</th>
+                <th>Teléfono Convencional</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-active" *ngFor="let usuario of DataUsers">
+                <td>{{ usuario.NOMBRES_USUARIO }}</td>
+                <td>{{ usuario.APELLIDOS_USUARIO }}</td>
+                <td>{{ usuario.IDENTIFICACION_USUARIO }}</td>
+                <td>{{ usuario.EDAD_USUARIO }}</td>
+                <td>{{ usuario.FECHANACIMIENTO_USUARIO }}</td>
+                <td>{{ usuario.EMAIL_USUARIO }}</td>
+                <td>{{ usuario.NACIONALIDAD_USUARIO }}</td>
+                <td>{{ usuario.PARROQUIARES_USUARIO }}</td>
+                <td>{{ usuario.BARRIORES_USUARIO }}</td>
+                <td>{{ usuario.TELFCELULAR_USUARIO }}</td>
+                <td>{{ usuario.TELFCONVENCIONAL_USUARIO }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

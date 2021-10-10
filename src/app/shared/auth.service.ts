@@ -33,4 +33,13 @@ export class AuthService {
   //   return this.http.get('http://127.0.0.1:8000/api/auth/user-profile');
   // }
 
+  // Lista de Usuarios
+  listUsers() : Observable<any> {
+    return this.http.get('http://127.0.0.1:8000/api/usuarios');
+  }
+
+  listBicicletas() : Observable<any> {
+    return this.http.get('http://localhost:8000/api/bicicletas');
+  }
+
 }
