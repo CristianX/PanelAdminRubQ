@@ -5,6 +5,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
 import { BicicletasListComponent } from './components/bicicletas-list/bicicletas-list.component';
 import { BicicletaComponent } from './components/bicicleta/bicicleta.component';
+import { BicicletasEliminadasComponent } from './components/bicicletas-eliminadas/bicicletas-eliminadas.component';
+import { BicicletaEliminadaComponent } from './components/bicicleta-eliminada/bicicleta-eliminada.component';
 
 const routes: Routes = [
   {
@@ -30,6 +32,16 @@ const routes: Routes = [
   {
     path: 'bicicleta/:id',
     component: BicicletaComponent
+  },
+
+  {
+    path: 'bicicletasEliminadas',
+    component: BicicletasEliminadasComponent
+  },
+
+  {
+    path: 'bicicletaEliminada/:id',
+    component: BicicletaEliminadaComponent
   }
 ];
 

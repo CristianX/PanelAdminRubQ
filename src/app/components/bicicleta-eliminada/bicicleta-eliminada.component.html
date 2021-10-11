@@ -1,0 +1,89 @@
+<header>
+    <app-navbar></app-navbar>
+</header>
+
+<body>
+
+    <div class="container" style="padding-top: 50px">
+
+        <h1>Identificación Registrada:</h1>
+        <h3>{{ DataBicicletaEliminada?.IDENTIFICACION_USUARIO }}</h3>
+
+        <h1>Apoderado:</h1>
+        <h3>{{ DataBicicletaEliminada?.APODERADO_BICICLETA }}</h3>
+
+        <h1>Marca:</h1>
+        <h3>{{ DataBicicletaEliminada?.MARCA_BICICLETA }}</h3>
+
+        <h1>Modelo:</h1>
+        <h3>{{ DataBicicletaEliminada?.MODELO_BICICLETA }}</h3>
+
+        <h1>Categoría:</h1>
+        <h3>{{ DataBicicletaEliminada?.CATEGORIA_BICICLETA }}</h3>
+
+        <h1>Tipo:</h1>
+        <h3>{{ DataBicicletaEliminada?.TIPOBICICLETA_BICICLETA }}</h3>
+
+        <h1>Tamaño:</h1>
+        <h3>{{ DataBicicletaEliminada?.TAMANIO_BICICLETA }}</h3>
+
+        <h1>Combinación de Colores:</h1>
+        <h3>{{ DataBicicletaEliminada?.COMBCOLORES_BICICLETA }}</h3>
+
+        <h1>Especificaciónes (Componentes o Personalización):</h1>
+        <h3>{{ DataBicicletaEliminada?.ESPEC_BICICLETA }}</h3>
+
+        <h1>Foto Frontal:</h1>
+        <img src="{{ DataBicicletaEliminada?.FOTOFRONTAL_BICICLETA }}" width="500px">
+
+        <h1>Foto Completa:</h1>
+        <img src="{{ DataBicicletaEliminada?.FOTOCOMPLETA_BICICLETA }}" width="500px">
+
+        <h1>Foto del Chásis:</h1>
+        <img src="{{ DataBicicletaEliminada?.FOTONUMSERIE_BICICLETA }}" width="500px">
+
+        <h1>Foto Componentes Personalizados:</h1>
+        <img src="{{ DataBicicletaEliminada?.FOTOCOMP_BICICLETA }}" width="500px">
+
+        <hr>
+        <h1>Bicicleta Nueva</h1>
+
+        <h1>Tienda de Compra:</h1>
+        <h3>{{ DataBicicletaEliminada?.RAZONSOCIAL_BICICLETA }}</h3>
+
+        <h1>RUC de la Tienda:</h1>
+        <h3>{{ DataBicicletaEliminada?.RUC_BICICLETA }}</h3>
+
+        <h1>Foto de la Factura:</h1>
+        <img src="{{ DataBicicletaEliminada?.FOTOFACTURA_BICICLETA }}" width="500px">
+
+        <hr>
+        <h1>Bicicleta Usada</h1>
+
+        <h1>Descripción de Transferencia:</h1>
+        <h3>{{ DataBicicletaEliminada?.DESCUSADA_BICICLETA }}</h3>
+
+        <h1>Nombre del Dueño Anterior:</h1>
+        <h3>{{ DataBicicletaEliminada?.NOMBUSADA_BICICLETA }}</h3>
+
+        <hr>
+
+        <h1>En Uso o Robada:</h1>
+        <h3 *ngIf="DataBicicletaEliminada?.ACTIVAROBADA_BICICLETA == 0">Activa</h3>
+        <h3 *ngIf="DataBicicletaEliminada?.ACTIVAROBADA_BICICLETA == 1">Robada</h3>
+
+        <h1>Foto de la Denuncia:</h1>
+        <img src="{{ DataBicicletaEliminada?.FOTODENUNCIA_BICICLETA }}" width="500px">
+
+        <h1>Código de Registro</h1>
+        <h3>{{ DataBicicletaEliminada?.CODREGISTRO_BICICLETA }}</h3>
+
+        <div class="col-sm-7">
+            <button class="btn btn-success">Restaurar</button>
+        </div>
+
+
+    </div>
+
+
+</body>

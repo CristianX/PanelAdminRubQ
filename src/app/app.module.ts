@@ -25,6 +25,8 @@ import { UsersListComponent } from './components/users/users-list/users-list.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BicicletasListComponent } from './components/bicicletas-list/bicicletas-list.component';
 import { BicicletaComponent } from './components/bicicleta/bicicleta.component';
+import { BicicletasEliminadasComponent } from './components/bicicletas-eliminadas/bicicletas-eliminadas.component';
+import { BicicletaEliminadaComponent } from './components/bicicleta-eliminada/bicicleta-eliminada.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { BicicletaComponent } from './components/bicicleta/bicicleta.component';
     NavbarComponent,
     BicicletasListComponent,
     BicicletaComponent,
+    BicicletasEliminadasComponent,
+    BicicletaEliminadaComponent,
   ],
   imports: [
     BrowserModule,

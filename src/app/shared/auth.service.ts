@@ -46,4 +46,8 @@ export class AuthService {
     return this.http.get('http://localhost:8000/api/bicicleta/' + id);
   }
 
+  getBicicletasEliminadas() : Observable<any> {
+    return this.http.get('http://localhost:8000/api/bicicletasEliminadas');
+  }
+
 }
