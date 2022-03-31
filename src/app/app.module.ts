@@ -27,6 +27,7 @@ import { BicicletasListComponent } from './components/bicicletas-list/bicicletas
 import { BicicletaComponent } from './components/bicicleta/bicicleta.component';
 import { BicicletasEliminadasComponent } from './components/bicicletas-eliminadas/bicicletas-eliminadas.component';
 import { BicicletaEliminadaComponent } from './components/bicicleta-eliminada/bicicleta-eliminada.component';
+import { CreateUsersComponent } from './components/create-users/create-users.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { BicicletaEliminadaComponent } from './components/bicicleta-eliminada/bi
     BicicletaComponent,
     BicicletasEliminadasComponent,
     BicicletaEliminadaComponent,
+    CreateUsersComponent,
   ],
   imports: [
     BrowserModule,

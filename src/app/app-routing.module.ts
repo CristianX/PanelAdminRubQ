@@ -7,11 +7,14 @@ import { BicicletasListComponent } from './components/bicicletas-list/bicicletas
 import { BicicletaComponent } from './components/bicicleta/bicicleta.component';
 import { BicicletasEliminadasComponent } from './components/bicicletas-eliminadas/bicicletas-eliminadas.component';
 import { BicicletaEliminadaComponent } from './components/bicicleta-eliminada/bicicleta-eliminada.component';
+import {CreateUsersComponent} from './components/create-users/create-users.component'
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    // Ruta por defecto
+    pathMatch: 'full'
   },
 
   {
@@ -42,6 +45,11 @@ const routes: Routes = [
   {
     path: 'bicicletaEliminada/:id',
     component: BicicletaEliminadaComponent
+  },
+
+  {
+    path: 'create',
+    component: CreateUsersComponent
   }
 ];
 

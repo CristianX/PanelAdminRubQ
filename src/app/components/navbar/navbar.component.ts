@@ -24,4 +24,8 @@ export class NavbarComponent implements OnInit {
     this.token.removeToken();
     this.router.navigate(['login']);
   }
+
+  goDashboard() {
+    this.router.navigate(['dashboard']);
+  }
 }

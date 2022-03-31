@@ -25,7 +25,7 @@ export class AuthService {
 
   // Login
   signin(user: User): Observable<any> {
-    return this.http.post<any>('http://127.0.0.1:8000/api/login', user);
+    return this.http.post<any>('http://localhost:8000/api/login', user);
   }
 
   // Poner dashboard
@@ -35,7 +35,7 @@ export class AuthService {
 
   // Lista de Usuarios
   listUsers() : Observable<any> {
-    return this.http.get('http://127.0.0.1:8000/api/usuarios');
+    return this.http.get('http://localhost:8000/api/usuarios');
   }
 
   listBicicletas() : Observable<any> {
@@ -48,6 +48,14 @@ export class AuthService {
 
   getBicicletasEliminadas() : Observable<any> {
     return this.http.get('http://localhost:8000/api/bicicletasEliminadas');
+  }
+
+  postRestaurarBicicletaEliminada(id: number) : Observable<any> {
+    return this.http.post(`http://localhost:8000/api/bicicletaRestaurar/${id}`, {method: 'PUT'});
+  }
+
+  postCrearUsuarioAdmin(user: User): Observable<any> {
+    return this.http.post<any>('http://localhost:8000/api/register', user);
   }
 
 }
