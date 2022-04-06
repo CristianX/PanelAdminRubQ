@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../shared/auth.service';
 
 @Component({
   selector: 'app-create-users',
@@ -7,9 +10,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateUsersComponent implements OnInit {
 
-  constructor() { }
+  createForm: FormGroup;
+  errors = null;
 
-  ngOnInit(): void {
+  constructor(
+    public router: Router,
+    public fb: FormBuilder,
+    public authService : AuthService,
+  ) {
+   this.createForm = this.fb.group({
+     name: [],
+     email: [],
+     password: []
+   });
   }
+
+  ngOnInit() {}
+
+  onSubmit() {
+    console.log(this.createForm.value);
+    this.authService.postCrearUsuarioAdmin(this.createForm.value).subscribe(
+      result => {
+        console.log("esto dice el result");
+        console.log(result);
+        // this.responseHandler(result);
+      },
+      error => {
+        console.log("Esto dice el error: ");
+        this.errors = error.error.message;
+      },
+    );
+  }
+
+  // Manejo de respuesta
+  // responseHandler(data: { access_token: string; }) {
+
+  //   // this.token.handleData(data.access_token);
+
+  // }
 
 }
