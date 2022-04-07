@@ -49,4 +49,8 @@ export class CreateUsersComponent implements OnInit {
 
   // }
 
+  goDashboard() {
+    this.router.navigate(['dashboard']);
+  }
+
 }
