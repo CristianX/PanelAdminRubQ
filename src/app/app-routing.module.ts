@@ -8,6 +8,7 @@ import { BicicletaComponent } from './components/bicicleta/bicicleta.component';
 import { BicicletasEliminadasComponent } from './components/bicicletas-eliminadas/bicicletas-eliminadas.component';
 import { BicicletaEliminadaComponent } from './components/bicicleta-eliminada/bicicleta-eliminada.component';
 import {CreateUsersComponent} from './components/create-users/create-users.component'
+import { RutasAdminGuard } from './guards/rutas-admin.guard';
 
 const routes: Routes = [
   {
@@ -19,37 +20,44 @@ const routes: Routes = [
 
   {
     path: 'dashboard',
-    component: NavigationComponent
+    component: NavigationComponent,
+    canActivate: [RutasAdminGuard]
   },
-
+  
   {
     path: 'usuarios',
-    component: UsersListComponent
+    component: UsersListComponent,
+    canActivate: [RutasAdminGuard]
   },
-
+  
   {
     path: 'bicicletas',
-    component: BicicletasListComponent
+    component: BicicletasListComponent,
+    canActivate: [RutasAdminGuard]
   },
-
+  
   {
     path: 'bicicleta/:id',
-    component: BicicletaComponent
+    component: BicicletaComponent,
+    canActivate: [RutasAdminGuard]
   },
-
+  
   {
     path: 'bicicletasEliminadas',
-    component: BicicletasEliminadasComponent
+    component: BicicletasEliminadasComponent,
+    canActivate: [RutasAdminGuard]
   },
-
+  
   {
     path: 'bicicletaEliminada/:id',
-    component: BicicletaEliminadaComponent
+    component: BicicletaEliminadaComponent,
+    canActivate: [RutasAdminGuard]
   },
-
+  
   {
     path: 'create',
-    component: CreateUsersComponent
+    component: CreateUsersComponent,
+    canActivate: [RutasAdminGuard]
   }
 ];
 
