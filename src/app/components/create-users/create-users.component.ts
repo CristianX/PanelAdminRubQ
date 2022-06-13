@@ -31,12 +31,12 @@ export class CreateUsersComponent implements OnInit {
     console.log(this.createForm.value);
     this.authService.postCrearUsuarioAdmin(this.createForm.value).subscribe(
       result => {
-        console.log("esto dice el result");
+        console.log("Result:");
         console.log(result);
         // this.responseHandler(result);
       },
       error => {
-        console.log("Esto dice el error: ");
+        console.log("Error:");
         this.errors = error.error.message;
       },
     );
