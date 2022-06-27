@@ -51,4 +51,17 @@ export class BicicletaEliminadaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  restaurarBicicleta(id: number | undefined): void {
+    this.authService.putRestaurarBicicletaEliminada(Number(id)).subscribe(
+      result => {
+        console.log("Result:");
+        console.log(result);
+      },
+      error => {
+        console.log("Error:");
+        console.log(error);
+      },
+    );
+  }
+
 }

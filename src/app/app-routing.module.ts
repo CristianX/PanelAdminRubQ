@@ -49,12 +49,6 @@ const routes: Routes = [
   },
   
   {
-    path: 'bicicletaEliminada/:id',
-    component: BicicletaEliminadaComponent,
-    canActivate: [RutasAdminGuard]
-  },
-  
-  {
     path: 'create',
     component: CreateUsersComponent,
     canActivate: [RutasAdminGuard]

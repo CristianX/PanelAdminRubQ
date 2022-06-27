@@ -28,11 +28,9 @@ export class CreateUsersComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    console.log(this.createForm.value);
     this.authService.postCrearUsuarioAdmin(this.createForm.value).subscribe(
       result => {
-        console.log("Result:");
-        console.log(result);
+        this.router.navigate(['dashboard']);
         // this.responseHandler(result);
       },
       error => {

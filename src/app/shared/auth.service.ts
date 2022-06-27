@@ -50,8 +50,8 @@ export class AuthService {
     return this.http.get('http://localhost:8000/api/bicicletasEliminadas');
   }
 
-  postRestaurarBicicletaEliminada(id: number) : Observable<any> {
-    return this.http.post(`http://localhost:8000/api/bicicletaRestaurar/${id}`, {method: 'PUT'});
+  putRestaurarBicicletaEliminada(id: number) : Observable<any> {
+    return this.http.put('http://localhost:8000/api/bicicletaRestaurar/' + id, '');
   }
 
   postCrearUsuarioAdmin(user: User): Observable<any> {
