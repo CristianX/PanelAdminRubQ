@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-users',
@@ -17,6 +18,7 @@ export class CreateUsersComponent implements OnInit {
     public router: Router,
     public fb: FormBuilder,
     public authService : AuthService,
+    private toastr : ToastrService,
   ) {
    this.createForm = this.fb.group({
      name: [],
@@ -30,12 +32,14 @@ export class CreateUsersComponent implements OnInit {
   onSubmit() {
     this.authService.postCrearUsuarioAdmin(this.createForm.value).subscribe(
       result => {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard']).then(() => {
+          this.toastr.success('Usuario Administrador creado con éxito', 'Usuario Creado');
+        });
         // this.responseHandler(result);
       },
       error => {
-        console.log("Error:");
-        this.errors = error.error.message;
+        // this.errors = error.error.message;
+        this.toastr.error(error.error.message, 'Error');
       },
     );
   }

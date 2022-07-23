@@ -28,6 +28,7 @@ import { BicicletaComponent } from './components/bicicleta/bicicleta.component';
 import { BicicletasEliminadasComponent } from './components/bicicletas-eliminadas/bicicletas-eliminadas.component';
 import { BicicletaEliminadaComponent } from './components/bicicleta-eliminada/bicicleta-eliminada.component';
 import { CreateUsersComponent } from './components/create-users/create-users.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { CreateUsersComponent } from './components/create-users/create-users.com
     
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

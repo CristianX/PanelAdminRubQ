@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../shared/auth.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 export class BicicletaEliminada {
   "id": number;
@@ -38,7 +39,7 @@ export class BicicletaEliminadaComponent implements OnInit {
   DataBicicletaEliminada: BicicletaEliminada | undefined;
   errors: null | undefined;
 
-  constructor( public authService: AuthService, private rutaActiva: ActivatedRoute ) {
+  constructor( public authService: AuthService, private rutaActiva: ActivatedRoute, public router: Router, private toastr : ToastrService) {
     this.authService.getBicicleta( this.rutaActiva.snapshot.params.id ).subscribe( (data: any) => {
       this.DataBicicletaEliminada = data;
     },
@@ -54,12 +55,12 @@ export class BicicletaEliminadaComponent implements OnInit {
   restaurarBicicleta(id: number | undefined): void {
     this.authService.putRestaurarBicicletaEliminada(Number(id)).subscribe(
       result => {
-        console.log("Result:");
-        console.log(result);
+        this.router.navigate(['bicicletasEliminadas']).then(() => {
+          this.toastr.success(result, 'Bicicleta Restaurada');
+        });
       },
       error => {
-        console.log("Error:");
-        console.log(error);
+        this.toastr.error("Error al Restaurar bicicleta", 'Error');
       },
     );
   }
